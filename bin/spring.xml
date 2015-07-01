@@ -20,6 +20,10 @@
 	<bean name="shapeService" class="org.roba.springaop.service.ShapeService"
 		autowire="byName"></bean>
 
+	<!-- Testing how pointcut is working -->
+	<bean name="pointcut" class="org.roba.springaop.service.ShapeService"
+		autowire="byName"></bean>
+
 	<bean name="loggingAspect" class="org.roba.springaop.aspect.LoggingAspect"></bean>
 
 </beans>
