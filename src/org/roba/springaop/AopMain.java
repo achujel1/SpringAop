@@ -25,6 +25,22 @@ public class AopMain {
 	/**
 	 * @throws BeansException
 	 */
+	private static void testingJoinPointsAndAdviceArguments()
+			throws BeansException {
+		ApplicationContext context = new ClassPathXmlApplicationContext(
+				"spring.xml");
+		ShapeService shapeService = context.getBean("pointcut2",
+				ShapeService.class);
+
+		// Setting the name of a circle:
+		shapeService.getCircle().setName("Dummy name");
+
+		System.out.println(shapeService.getCircle().getName());
+	}
+
+	/**
+	 * @throws BeansException
+	 */
 	private static void morePointcutTesting() throws BeansException {
 		ApplicationContext context = new ClassPathXmlApplicationContext(
 				"spring.xml");
@@ -68,6 +84,7 @@ public class AopMain {
 		testingAspectsInSpringAOP();
 		testingPointcut();
 		morePointcutTesting();
+		testingJoinPointsAndAdviceArguments();
 	}
 
 	/**
