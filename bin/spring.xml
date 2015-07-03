@@ -14,7 +14,8 @@
 	</bean>
 
 	<bean name="circle" class="org.roba.springaop.model.Circle">
-		<property name="name" value="Circle name"></property>
+		<!-- Commenting this part for an AfterAndReturnAdviceTest -->
+		<!-- <property name="name" value="Circle name"></property> -->
 	</bean>
 
 	<bean name="shapeService" class="org.roba.springaop.service.ShapeService"
@@ -28,6 +29,9 @@
 	<bean name="pointcut2" class="org.roba.springaop.service.ShapeService"
 		autowire="byName"></bean>
 
+	<!-- Testing after advice -->
+	<bean name="afterAdvice" class="org.roba.springaop.service.ShapeService"
+		autowire="byName"></bean>
 
 	<bean name="loggingAspect" class="org.roba.springaop.aspect.LoggingAspect"></bean>
 
