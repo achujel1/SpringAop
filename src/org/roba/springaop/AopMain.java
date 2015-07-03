@@ -25,24 +25,6 @@ public class AopMain {
 	/**
 	 * @throws BeansException
 	 */
-	private static void testingAfterAdviceTypes() throws BeansException {
-		ApplicationContext context = new ClassPathXmlApplicationContext(
-				"spring.xml");
-
-		ShapeService shapeService = context.getBean("afterAdvice",
-				ShapeService.class);
-
-		// Testing how single argument method is being called with an exception
-		// thrown
-		shapeService.getCircle().setNameandReturn("Dummy name");
-
-		// Testing how single argument method is being called with a return
-		shapeService.getCircle().setName("Dummy name");
-	}
-
-	/**
-	 * @throws BeansException
-	 */
 	private static void testingJoinPointsAndAdviceArguments()
 			throws BeansException {
 		ApplicationContext context = new ClassPathXmlApplicationContext(
@@ -103,7 +85,6 @@ public class AopMain {
 		testingPointcut();
 		morePointcutTesting();
 		testingJoinPointsAndAdviceArguments();
-		testingAfterAdviceTypes();
 	}
 
 	/**
