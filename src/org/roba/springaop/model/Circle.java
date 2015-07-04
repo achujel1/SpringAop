@@ -3,6 +3,8 @@ package org.roba.springaop.model;
 public class Circle {
 	private String name;
 
+	// Why by adding this I get an error?
+	// @Loggable
 	public String getName() {
 
 		return name;

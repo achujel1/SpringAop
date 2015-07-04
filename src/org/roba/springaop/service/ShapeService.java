@@ -1,5 +1,6 @@
 package org.roba.springaop.service;
 
+import org.roba.springaop.aspect.Loggable;
 import org.roba.springaop.model.Circle;
 import org.roba.springaop.model.Triangle;
 
@@ -15,6 +16,7 @@ public class ShapeService {
 		this.triangle = triangle;
 	}
 
+	@Loggable
 	public Circle getCircle() {
 		return circle;
 	}

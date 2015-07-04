@@ -68,7 +68,12 @@ public class LoggingAspect {
 	 * @param proceedingJoinPoint
 	 * @return
 	 */
-	@Around("allGetters()")
+
+	// Simply commenting for other tests
+	// @Around("allGetters()")
+
+	// Adding created annotation
+	@Around("@annotation(org.roba.springaop.aspect.Loggable)")
 	private Object myAroundAdvice(ProceedingJoinPoint proceedingJoinPoint) {
 
 		Object returnValue = null;
