@@ -20,6 +20,18 @@ public class AopMain {
 	 */
 	public static void main(String[] args) {
 		// space to code
+		testingAroundAdvice();
+	}
+
+	/**
+	 * 
+	 */
+	private static void testingAroundAdvice() {
+		ApplicationContext ctx = new ClassPathXmlApplicationContext(
+				"spring.xml");
+		ShapeService shapeService = ctx.getBean("shapeService",
+				ShapeService.class);
+		shapeService.getCircle();
 	}
 
 	/**
