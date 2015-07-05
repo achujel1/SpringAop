@@ -19,8 +19,20 @@ public class AopMain {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// space to code
-		testingAroundAdvice();
+
+		// space for some code
+
+	}
+
+	/**
+	 * 
+	 */
+	private static void testingConfigWiring() {
+		ApplicationContext ctx = new ClassPathXmlApplicationContext(
+				"spring.xml");
+		ShapeService shapeService = ctx.getBean("shapeService",
+				ShapeService.class);
+		shapeService.getCircle();
 	}
 
 	/**
@@ -116,6 +128,8 @@ public class AopMain {
 		morePointcutTesting();
 		testingJoinPointsAndAdviceArguments();
 		testingAfterAdviceTypes();
+		testingAroundAdvice();
+		testingConfigWiring();
 	}
 
 	/**

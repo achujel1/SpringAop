@@ -4,8 +4,6 @@ import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.AfterThrowing;
-import org.aspectj.lang.annotation.Around;
-import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 
@@ -23,7 +21,9 @@ import org.aspectj.lang.annotation.Pointcut;
  * @author Adminas
  *
  */
-@Aspect
+
+// Commenting this because I've declared this in spring.xml
+// @Aspect
 public class LoggingAspect {
 
 	// Annotation before is calling methods BEFORE the method LogginAdvice is
@@ -73,7 +73,9 @@ public class LoggingAspect {
 	// @Around("allGetters()")
 
 	// Adding created annotation
-	@Around("@annotation(org.roba.springaop.aspect.Loggable)")
+
+	// Commenting this because it has been declared in spring.xml
+	// @Around("@annotation(org.roba.springaop.aspect.Loggable)")
 	private Object myAroundAdvice(ProceedingJoinPoint proceedingJoinPoint) {
 
 		Object returnValue = null;
@@ -109,7 +111,9 @@ public class LoggingAspect {
 	 * System.out.println("This is a second advice method"); }
 	 */
 	// @Pointcut allows to cut inside the Before Annotation
-	@Pointcut("execution(* get*())")
+
+	// Commenting this because I have declared this in spring.xml
+	// @Pointcut("execution(* get*())")
 	public void allGetters() {
 	}
 

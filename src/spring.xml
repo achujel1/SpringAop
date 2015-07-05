@@ -35,4 +35,13 @@
 
 	<bean name="loggingAspect" class="org.roba.springaop.aspect.LoggingAspect"></bean>
 
+	<!-- Testing annotation writing in Spring -->
+	<!-- Declaring AOP configuration not with annotation but in spring.xml -->
+	<aop:config>
+		<aop:aspect id="loggingAspect" ref="loggingAspect">
+			<aop:pointcut expression="execution(* get*())" id="allGetters" />
+			<aop:around method="myAroundAdvice" pointcut-ref="allGetters" />
+		</aop:aspect>
+	</aop:config>
+
 </beans>
