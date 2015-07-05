@@ -1,5 +1,6 @@
 package org.roba.springaop;
 
+import org.roba.springaop.service.FactoryService;
 import org.roba.springaop.service.ShapeService;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
@@ -25,7 +26,18 @@ public class AopMain {
 	}
 
 	/**
-	 * 
+	 * Tested how proxies work in spring AOP
+	 */
+	private static void testingAopProxies() {
+		FactoryService factoryService = new FactoryService();
+		ShapeService shapeService = (ShapeService) factoryService
+				.getBean("shapeService");
+
+		shapeService.getCircle();
+	}
+
+	/**
+	 * Tested how to configure Spring without XML configuration
 	 */
 	private static void testingConfigWiring() {
 		ApplicationContext ctx = new ClassPathXmlApplicationContext(
@@ -36,7 +48,7 @@ public class AopMain {
 	}
 
 	/**
-	 * 
+	 * Tesed @Around annotation in Spring
 	 */
 	private static void testingAroundAdvice() {
 		ApplicationContext ctx = new ClassPathXmlApplicationContext(
@@ -47,6 +59,8 @@ public class AopMain {
 	}
 
 	/**
+	 * Tested @Around annotation types in Spring
+	 * 
 	 * @throws BeansException
 	 */
 	private static void testingAfterAdviceTypes() throws BeansException {
@@ -65,6 +79,8 @@ public class AopMain {
 	}
 
 	/**
+	 * Tested join points in Spring
+	 * 
 	 * @throws BeansException
 	 */
 	private static void testingJoinPointsAndAdviceArguments()
@@ -81,6 +97,8 @@ public class AopMain {
 	}
 
 	/**
+	 * Tested pointcuts in Spring
+	 * 
 	 * @throws BeansException
 	 */
 	private static void morePointcutTesting() throws BeansException {
@@ -92,6 +110,8 @@ public class AopMain {
 	}
 
 	/**
+	 * Tested pointcuts in Spring
+	 * 
 	 * @throws BeansException
 	 */
 	private static void testingPointcut() throws BeansException {
@@ -103,7 +123,7 @@ public class AopMain {
 	}
 
 	/**
-	 * Just simplye testing aspects in Spring
+	 * Just simple testing aspects in Spring
 	 * 
 	 * @throws BeansException
 	 */
@@ -130,6 +150,7 @@ public class AopMain {
 		testingAfterAdviceTypes();
 		testingAroundAdvice();
 		testingConfigWiring();
+		testingAopProxies();
 	}
 
 	/**

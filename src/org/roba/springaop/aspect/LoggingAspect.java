@@ -45,6 +45,13 @@ public class LoggingAspect {
 
 	}
 
+	/**
+	 * Simple method to test spring without XML configuration
+	 */
+	public void loggingAdvice() {
+		System.out.println("loggingAdvice called in class LoggingAspect");
+	}
+
 	// This annotation @After is calling LogginAdvice methods AFTER the setter
 	// is called
 	// @After("args(name)")
